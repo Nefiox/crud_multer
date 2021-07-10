@@ -9,9 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 // Rutas
 const groupsRouter = require('./routes/groups');
 
-app.get('/', (req, res) => {
-    res.redirect('/groups/')
-});
+app.get('/', (req, res) => res.redirect('/groups/'));
 app.use('/groups', groupsRouter);
 
 // Servidor
