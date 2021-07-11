@@ -9,7 +9,6 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/img/groups'));
     },    
     filename: (req, file, cb) => {
-        console.log(file);
         const newFilename = 'group-' + Date.now() + path.extname(file.originalname);
         cb(null, newFilename);
     }

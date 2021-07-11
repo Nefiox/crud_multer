@@ -63,9 +63,10 @@
   "image": null
  },
  {
-  "name": "Nury",
-  "description": "A description",
-  "repository": "http://google.com",
+  "name": "Test group",
+  "description": "Test description",
+  "repository": "https://github.com/kjskjsng3a",
+  "image": "group-1625983987871.jpg",
   "id": 10
  }
 ]
