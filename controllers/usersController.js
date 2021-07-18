@@ -13,13 +13,20 @@ module.exports = {
         res.render('users/create');
     },
     store: (req, res) => {
-        let errors 
+        let errors = validationResult(req);
+        if(errors.isEmpty()) {
+            let user = req.body;
+    
+            userId = usersModel.create(user);
+    
+            res.redirect('/users/' + userId);
+        } else {
+            res.render('users/create', {
+                errors: errors.array(),
+                old: req.body
+            });
+        }
 
-        let user = req.body;
-
-        userId = usersModel.create(user);
-
-        res.redirect('/users/' + userId);
     },
     show: (req, res) => {
         let user = usersModel.find(req.params.id);

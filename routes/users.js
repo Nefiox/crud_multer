@@ -10,10 +10,11 @@ const validateCreateForm = [
     body('last_name')
     .notEmpty().withMessage('Debes completar el campo de apellido'),
     body('email')
-    .isEmail().withMessage('Debes completar un email válido'),
+    .notEmpty().withMessage('Debes completar el campo de email').bail()
+    .isEmail().withMessage('Debes ingresar un email válido'),
     body('password')
     .notEmpty().withMessage('Debes completar la contraseña').bail()
-    .isLength({ min: 6 }).withMessage('La contraseña debe ser más larga')
+    .isLength({ min: 6 }).withMessage('La contraseña debe tener mínimo 6 caracteres')
 ];
 
 // Todos los usuarios
